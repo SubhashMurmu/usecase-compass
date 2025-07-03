@@ -102,37 +102,37 @@ GET /api/applications/search?can=CAN123&page=1&size=20
 ## Search Features
 
 ### **Multi-Field Search**
-- **Individual Fields:** Search by specific fields like nationalId, firstName, lastName, CAN[^3]
-- **General Search:** Use `searchText` to search across all fields simultaneously[^3]
-- **Date Search:** Support for exact date matching and date range filtering[^3]
+- **Individual Fields:** Search by specific fields like nationalId, firstName, lastName, CAN
+- **General Search:** Use `searchText` to search across all fields simultaneously
+- **Date Search:** Support for exact date matching and date range filtering
 
 ### **CAN Search Logic**
-- **Exact Match:** For 10-character alphanumeric CAN values[^3]
-- **Partial Match:** For incomplete CAN searches[^3]
-- **Case-Insensitive:** All CAN searches ignore case[^3]
+- **Exact Match:** For 10-character alphanumeric CAN values
+- **Partial Match:** For incomplete CAN searches
+- **Case-Insensitive:** All CAN searches ignore case
 
 ### **Date Handling**
-- **Exact Date:** Use `issueDate` for precise date matching[^3]
-- **Date Range:** Use `issuedDateFrom` and `issuedDateTo` for range filtering[^3]
-- **Smart Parsing:** `searchText` can parse and match date strings in YYYY-MM-DD format[^3]
+- **Exact Date:** Use `issueDate` for precise date matching
+- **Date Range:** Use `issuedDateFrom` and `issuedDateTo` for range filtering
+- **Smart Parsing:** `searchText` can parse and match date strings in YYYY-MM-DD format
 
 ### **Input Sanitization**
-- SQL injection prevention through input sanitization[^3]
-- Escaping of SQL wildcards (%, _, \)[^3]
-- Removal of special characters except alphanumeric, spaces, and hyphens[^3]
+- SQL injection prevention through input sanitization
+- Escaping of SQL wildcards (%, _, \)
+- Removal of special characters except alphanumeric, spaces, and hyphens
 
 ## Security & Performance
 
 ### **Authentication & Authorization**
-- **JWT Authentication:** Requires valid Bearer token[^9]
-- **Role-Based Access:** Only users with required admin roles can access[^22]
-- **Rate Limiting:** 100 requests per minute per IP address[^8]
+- **JWT Authentication:** Requires valid Bearer token
+- **Role-Based Access:** Only users with required admin roles can access
+- **Rate Limiting:** 100 requests per minute per IP address
 
 ### **Performance Features**
-- **Pagination:** Efficient data retrieval with configurable page sizes[^3]
-- **Sorting:** Database-level sorting for optimal performance[^3]
-- **JPA Specifications:** Dynamic query building for complex searches[^3]
-- **Transaction Management:** Read-only transactions for search operations[^3]
+- **Pagination:** Efficient data retrieval with configurable page sizes
+- **Sorting:** Database-level sorting for optimal performance
+- **JPA Specifications:** Dynamic query building for complex searches
+- **Transaction Management:** Read-only transactions for search operations
 
 ## Error Handling
 
@@ -162,10 +162,10 @@ GET /api/applications/search?can=CAN123&page=1&size=20
 ## Implementation Details
 
 ### **Core Components**
-- **Controller:** `ApplicationSearchController` - REST endpoint handling[^18]
-- **Service:** `ApplicationSearchServiceImpl` - Business logic and search specifications[^3]
-- **Repository:** `UserInfoRepository` - Data access with JPA Specifications[^4]
-- **DTOs:** `ApplicationSearchResponseDTO`, `ApplicationSearchResultDTO` - Data transfer objects[^15][^16]
+- **Controller:** `ApplicationSearchController` - REST endpoint handling
+- **Service:** `ApplicationSearchServiceImpl` - Business logic and search specifications
+- **Repository:** `UserInfoRepository` - Data access with JPA Specifications
+- **DTOs:** `ApplicationSearchResponseDTO`, `ApplicationSearchResultDTO` - Data transfer objects
 
 ### **Database Mapping**
 The search operates on the `UserInfo` entity with the following field mappings:
