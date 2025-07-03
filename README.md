@@ -1,5 +1,4 @@
 
-```markdown
 # Application Search Feature - README
 
 A comprehensive search API for user applications with advanced filtering, pagination, sorting, and security features. Built with Spring Boot and JPA Specifications for flexible and efficient data retrieval.
@@ -211,9 +210,8 @@ curl -X GET "http://localhost:8080/api/applications/search?issuedDateFrom=2024-0
 
 ## Notes
 
-- The search feature is optimized for performance with database-level filtering and sorting[^3]
-- All searches are case-insensitive for better user experience[^3]
-- The `searchText` parameter provides a convenient way to search across all fields[^3]
-- Rate limiting prevents abuse while allowing reasonable usage patterns[^8]
-- Comprehensive validation ensures data integrity and security[^18]
-```
+- The search feature is optimized for performance with database-level filtering and sorting.
+- All searches are case-insensitive for better user experience.
+- The `searchText` parameter provides a convenient way to search across all fields.
+- Rate limiting prevents abuse while allowing reasonable usage patterns.
+- Comprehensive validation ensures data integrity and security.
