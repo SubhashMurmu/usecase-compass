@@ -37,28 +37,28 @@ Search for applications using any combination of supported filters with paginati
 **Basic search by name:**
 ```
 
-GET /api/applications/search?firstName=John\&lastName=Doe
+GET /api/applications/search?firstName=John&lastName=Doe
 
 ```
 
 **Date range search with sorting:**
 ```
 
-GET /api/applications/search?issuedDateFrom=2024-01-01\&issuedDateTo=2024-12-31\&sortBy=lastName\&sortOrder=asc
+GET /api/applications/search?issuedDateFrom=2024-01-01&issuedDateTo=2024-12-31&sortBy=lastName&sortOrder=asc
 
 ```
 
 **General text search:**
 ```
 
-GET /api/applications/search?searchText=A123456789\&page=2\&size=5
+GET /api/applications/search?searchText=A123456789&page=2&size=5
 
 ```
 
 **CAN search with pagination:**
 ```
 
-GET /api/applications/search?can=CAN123\&page=1\&size=20
+GET /api/applications/search?can=CAN123&page=1&size=20
 
 ```
 
@@ -176,18 +176,18 @@ The search operates on the `UserInfo` entity with the following field mappings:
 - `can` → `cardAccessNumber`
 
 ### **Validation Rules**
-- All string parameters have maximum length constraints[^18]
-- Page numbers must be between 1 and 1000[^18]
-- Page size must be between 1 and 100[^18]
-- Sort fields are restricted to predefined values[^18]
-- Sort order must be either 'asc' or 'desc'[^18]
+- All string parameters have maximum length constraints.
+- Page numbers must be between 1 and 1000.
+- Page size must be between 1 and 100.
+- Sort fields are restricted to predefined values.
+- Sort order must be either 'asc' or 'desc'.
 
 ## Usage Examples
 
 ### **Search by Multiple Criteria**
 ```
 
-curl -X GET "http://localhost:8080/api/applications/search?firstName=Jane\&can=CAN123\&sortBy=issuedDate\&sortOrder=desc" \
+curl -X GET "http://localhost:8080/api/applications/search?firstName=Jane&can=CAN123&sortBy=issuedDate&sortOrder=desc" 
 -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
 ```
@@ -195,7 +195,7 @@ curl -X GET "http://localhost:8080/api/applications/search?firstName=Jane\&can=C
 ### **General Text Search**
 ```
 
-curl -X GET "http://localhost:8080/api/applications/search?searchText=2024-05-15\&page=1\&size=5" \
+curl -X GET "http://localhost:8080/api/applications/search?searchText=2024-05-15&page=1&size=5" 
 -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
 ```
@@ -203,7 +203,7 @@ curl -X GET "http://localhost:8080/api/applications/search?searchText=2024-05-15
 ### **Date Range Search**
 ```
 
-curl -X GET "http://localhost:8080/api/applications/search?issuedDateFrom=2024-01-01\&issuedDateTo=2024-06-30" \
+curl -X GET "http://localhost:8080/api/applications/search?issuedDateFrom=2024-01-01&issuedDateTo=2024-06-30" 
 -H "Authorization: Bearer YOUR_JWT_TOKEN"
 
 ```
